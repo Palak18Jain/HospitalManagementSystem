@@ -107,7 +107,7 @@ function Navbar() {
                 Book Appointment
               </button>
             </div>
-          )}
+          )} 
         </div>
 
         {/* MOBILE MENU BUTTON */}

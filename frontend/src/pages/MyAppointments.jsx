@@ -44,6 +44,10 @@ function MyAppointments() {
 
 
   const cancelAppointment = async (appointmentId) => {
+    const isConfirmed = window.confirm("Are you sure you want to cancel this appointment?");
+    if (!isConfirmed) {
+      return;
+    }
     try {
       const { data } = await axios.post(`${backendUrl}/api/user/cancel-appointment`, { appointmentId }, {
         headers: { token }

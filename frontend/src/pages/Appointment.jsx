@@ -106,6 +106,11 @@ function Appointment() {
                 return navigate('/login');
             }
 
+            if (!slotTime) {
+                toast.error("Please select a slot time first.");
+                return;
+            }
+
             const date = docSlots[slotIndex].date;
 
             let day = date.getDate();
@@ -113,6 +118,11 @@ function Appointment() {
             let year = date.getFullYear();
 
             const slotDate = `${year}-${month}-${day}`;
+            
+            const isConfirmed = window.confirm(`Are you sure you want to book an appointment for ${slotDate} at ${slotTime}?`);
+            if (!isConfirmed) {
+                return;
+            }
             
             let slots_booked = docInfo.slots_booked || {};
             if (typeof slots_booked === 'string') {

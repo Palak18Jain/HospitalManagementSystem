@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../shared/Navbar";
 import Footer from "../shared/Footer";
-import { assets } from "../assets/assets";
+import SendEmail from "../components/SendEmail";
 
 function Contact() {
   return (
@@ -24,17 +24,12 @@ function Contact() {
             </p>
           </div>
 
-          {/* MIDDLE SECTION: Info & Image */}
+          {/* MIDDLE SECTION: Info & Form */}
           <div className="flex flex-col lg:flex-row gap-12 items-stretch">
 
-            {/* LEFT SIDE: Image */}
-            <div className="w-full lg:w-1/2 relative">
-              <div className="absolute inset-0 bg-blue-100 rounded-3xl transform translate-x-3 translate-y-3 -z-10" />
-              <img
-                src={assets.contact_image}
-                alt="Contact representation"
-                className="w-full h-full min-h-[350px] object-cover rounded-3xl shadow-md hover:scale-[1.01] transition-transform duration-500"
-              />
+            {/* LEFT SIDE: Contact Form */}
+            <div className="w-full lg:w-1/2 flex">
+              <SendEmail />
             </div>
 
             {/* RIGHT SIDE: Contact Details */}
